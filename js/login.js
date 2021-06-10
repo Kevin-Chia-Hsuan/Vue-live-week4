@@ -1,13 +1,14 @@
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.9/vue.esm-browser.js';
 
+// 加入站點
+const url = 'https:///vue3-course-api.hexschool.io';
+// 加入個人 API Path
+const path = 'kevinapog47138';
+
 createApp({
   data() {
     return {
       // 一律使用 function return
-      // 加入站點
-      url: 'https:///vue3-course-api.hexschool.io',
-      // 加入個人 API Path
-      path: 'kevinapog47138',
       user: {
         username: '',
         password: '',
@@ -17,7 +18,7 @@ createApp({
   methods: {
     // 函式的集合
     login() {
-      const api = `${this.url}/admin/signin`;
+      const api = `${url}/admin/signin`;
       axios
         .post(api, this.user)
         .then((res) => {
